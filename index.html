@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <h1>Expense Tracker</h1>
+      <div class="budget-section">
+        <h2>Set Your Budget</h2>
+        <form id="budget-form">
+          <input
+            type="number"
+            id="set-budget"
+            placeholder="Enter your budget"
+            required
+          />
+          <button type="submit">Set Budget</button>
+        </form>
+        <h3>Your Budget: <span id="budget">Ksh 0.00</span></h3>
+        <h3>Your Balance: <span id="balance">Ksh 0.00</span></h3>
+      </div>
+
+      <div class="transaction-section">
+        <h2>Add Transaction</h2>
+        <form id="transaction-form">
+          <input
+            type="text"
+            id="description"
+            placeholder="Transaction Description"
+            required
+          />
+          <input type="number" id="amount" placeholder="Amount" required />
+          <button type="submit">Add Transaction</button>
+        </form>
+      </div>
+
+      <div class="history-section">
+        <h2>Transaction History</h2>
+        <button onclick="filterTransactions('weekly')">Show Last 7 Days</button>
+        <button onclick="filterTransactions('monthly')">Show Last Month</button>
+        <ul id="transaction-list"></ul>
+        <p id="budget-warning"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
